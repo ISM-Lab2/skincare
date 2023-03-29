@@ -38,10 +38,10 @@ Obtaining skin tone consists of :
 - Detecting and extracting skin pixels
 - Classifying those color values into the appropriate skin tone class
 
-[This paper](http://www.eleco.org.tr/openconf_2017/modules/request.php?module=oc_proceedings&action=view.php&id=248&file=1/248.pdf&a=Accept+as+Lecture) was followed in extracting the skin pixels. [Skin detection](https://github.com/Randon-Myntra-HackerRamp-21/CV-skin-care-recommendation/blob/main/ML/Skin_metrics/Skin_tone/skin_detection.py) has three major steps i.e.., **initial segmentation, prediction of skin pixels and k-means clustering**. 
+[This paper](http://www.eleco.org.tr/openconf_2017/modules/request.php?module=oc_proceedings&action=view.php&id=248&file=1/248.pdf&a=Accept+as+Lecture) was followed in extracting the skin pixels. [Skin detection](https://github.com/ISM-Lab2/skincare/blob/main/ML/Skin_metrics/Skin_tone/skin_detection.py) has three major steps i.e.., **initial segmentation, prediction of skin pixels and k-means clustering**. 
 Initial segmentation is applied with the threshold value &#8594; average of [T<sub>OTSU</sub>](https://learnopencv.com/otsu-thresholding-with-opencv/) and T<sub>MAX</sub>. These values are aquired from the image histogram of the grayscale image
 
-![Image Histogram](https://github.com/Randon-Myntra-HackerRamp-21/CV-skin-care-recommendation/blob/main/images/skin_tone/image_histogram.png)
+![Image Histogram](https://github.com/ISM-Lab2/skincare/blob/main/images/skin_tone/image_histogram.png)
 
 The thresholded image is then converted to, **HSV** and **YCrCb** color spaces. These colorspaces are less sensitive to light conditions. Potential skin color pixels are selected with : 
 `(Hue <= 170) and (140 <= Cr <= 170) and (90 <= Cb <= 120)`.
@@ -51,9 +51,9 @@ We defined special dataset made of input features in order to cluster pixels on 
 
 Image pixels are clustered into three clusters: **background, foreground and skin pixels**. We used square Euclidean measure as a distance. Aproximated skin pixels _(I)_, determine which cluster represents skin.
 
-![Skin_detection](https://github.com/Randon-Myntra-HackerRamp-21/CV-skin-care-recommendation/blob/main/images/skin_tone/skintone_images_fs.png)
+![Skin_detection](https://github.com/ISM-Lab2/skincare/blob/main/images/skin_tone/skintone_images_fs.png)
 
-The mean color values obtained from the cluster are then used for classifying the tone into [Fitzpatrick scale](https://en.wikipedia.org/wiki/Fitzpatrick_scale) using a **KNN model**. The model was trained using the [color values dataset](https://github.com/Randon-Myntra-HackerRamp-21/CV-skin-care-recommendation/blob/main/ML/Skin_metrics/Skin_tone/public/skin_tone_dataset.csv) gotten from the [image dataset](https://github.com/Randon-Myntra-HackerRamp-21/CV-skin-care-recommendation/tree/main/ML/Skin_metrics/Skin_tone/public/skin%20tone%20values) of [Von Luschan's chromatic scale](https://github.com/Randon-Myntra-HackerRamp-21/CV-skin-care-recommendation/blob/main/ML/Skin_metrics/Skin_tone/public/test%20images/Felix_von_Luschan_Skin_Color_chart.svg.png).
+The mean color values obtained from the cluster are then used for classifying the tone into [Fitzpatrick scale](https://en.wikipedia.org/wiki/Fitzpatrick_scale) using a **KNN model**. The model was trained using the [color values dataset](https://github.com/ISM-Lab2/skincare/blob/main/ML/Skin_metrics/Skin_tone/public/skin_tone_dataset.csv) gotten from the [image dataset](https://github.com/ISM-Lab2/skincare/tree/main/ML/Skin_metrics/Skin_tone/public/skin%20tone%20values) of [Von Luschan's chromatic scale](https://github.com/ISM-Lab2/skincare/blob/main/ML/Skin_metrics/Skin_tone/public/test%20images/Felix_von_Luschan_Skin_Color_chart.svg.png).
 
 ## Skin Type
 
