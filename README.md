@@ -1,14 +1,3 @@
-
-
-
-# Team Name : Randon
-**Project Name** : Skyn 
-
-**Chosen Theme** : Beautify
-
-**Myntra HackerRamp: Campus Edition 2021**
-
-
 ## Description
 <!-- A virtual **skincare advisor** that uses **Machine Learning** to analyse user's selfie and offer personalised products **recommendation** based on the skin metrics inferred. -->
 _An application that recommends personalised skincare and makeup products based on the skin metrics inferred from user’s selfie,
@@ -17,15 +6,6 @@ Acne concern level. With these data points, products with high **cosine-similari
 The web application was written in React-Flask.
 
 [Read more...](https://docs.google.com/presentation/d/1vVo3oRQ1KYGFHyV3YhPADTzodDOFcXKmd5sFNfemASo/edit?usp=sharing)
-
-## Team Members
-[Sri Sylamsh Amrutakavi](https://github.com/Sylamsh) 
-
-[Gaurav Bhattacharjee](https://github.com/guilefoylegaurav)
-
-[Prachurya Nath](https://github.com/prachuryanath)
-
-[Mondeep Prakash](https://github.com/legitmxn)
 
 # Web Application
 
